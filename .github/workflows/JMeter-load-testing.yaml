@@ -22,7 +22,7 @@ jobs:
         run: | 
           echo "DIRECTORY: " 
           ls 
-          ./node_modules/postman-jmeter/bin/convert-postman-jmeter -p ./postman/collections/catfact-coll.json -j catfacts.jmx -o -v=resolve
+          ./node_modules/postman-jmeter/bin/convert-postman-jmeter -p ./test/catfact-coll.json -j catfacts.jmx -o -v=resolve
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
