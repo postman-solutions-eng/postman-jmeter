@@ -1,6 +1,6 @@
 **NOTE**: This utility is based on the work of [sercheo87](https://github.com/sercheo87/convert-postman-jmeter).  
 
-# convert-postman-jmeter
+# postman-jmeter
 <!--
 [![Node.js Publish](https://github.com/sercheo87/convert-postman-jmeter/actions/workflows/npm-publish.yml/badge.svg?event=page_build)](https://github.com/sercheo87/convert-postman-jmeter/actions/workflows/npm-publish.yml)
 ![GitHub issues](https://img.shields.io/github/issues/sercheo87/convert-postman-jmeter.svg)
@@ -57,16 +57,14 @@ How to handle variables defined at the collection and environment level.
 
 ## Automation with GitHub Actions
 
-This utility is designed to enable load-testing via JMeter as part of a CI/CD pipeline.  An example can be found in this repo.  
+This utility is designed to enable load-testing via JMeter as part of a CI/CD pipeline.  An example can be found [in this repo](https://github.com/BidnessForB/postman-jmeter/blob/main/.github/workflows/JMeter-load-testing.yaml).  
 
 NOTE: Protocol is always resolved, even if inferred from variable values.  
 
+## Limitations
 
-
-
-
-
+Body data are not currently processed.  
 
 ## Known Issues
 
-For issues create o find in [issues page](https://github.com/sercheo87/convert-postman-jmeter/issues).
+For issues create o find in [issues page](https://github.com/bidnessforb/postman-jmeter/issues).
