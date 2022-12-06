@@ -10,9 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-   #   - name: Install postman to jmeter converter
+      - name: Install postman to jmeter converter
    #     run: | 
    #       npm install -s postman-jmeter
+        run: npm install
       - name: install jmeter
         run: |
           java -version
