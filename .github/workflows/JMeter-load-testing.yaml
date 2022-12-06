@@ -1,6 +1,8 @@
 name: Stress testing with JMeter
 
 on:  workflow_dispatch
+     repository_dispatch:
+       types: [load-test]
 
 jobs:
   load-test-with-jmeter:
@@ -26,7 +28,14 @@ jobs:
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
-          ./jmeter -n -t ${{ github.workspace }}/catfacts.jmx;
+          ./jmeter -n -t ${{ github.workspace }}/catfacts.jmx -l ./results.csv -e -o ./output
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: jmeter-load-test
+          path: |
+            output
+
           
           
           
