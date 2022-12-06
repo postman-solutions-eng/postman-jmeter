@@ -23,8 +23,6 @@ jobs:
           pwd
       - name: Convert postman collection
         run: | 
-          echo "DIRECTORY: " 
-          ls 
           ./node_modules/postman-jmeter/bin/convert-postman-jmeter -p ./test/catfact-coll.json -j catfacts.jmx -o -v=resolve
       - name: Run Stress Tests
         run: |
