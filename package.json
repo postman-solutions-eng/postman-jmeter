@@ -1,10 +1,10 @@
 {
-  "name": "convert-postman-jmeter",
+  "name": "postman-jmeter",
   "version": "2.0.20",
   "description": "Convert files Postman Project to JMeter Project",
-  "main": "./lib/convert-postman-jmeter",
+  "main": "./lib/postman-jmeter",
   "scripts": {
-    "start": "node ./bin/convert-postman-jmeter",
+    "start": "node ./bin/postman-jmeter",
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha test",
     "lint": "./node_modules/.bin/eslint ./lib --format junit --output-file ./reports/eslint/eslint.xml"
   },
@@ -20,7 +20,7 @@
     "cli",
     "command"
   ],
-  "author": "chancaysergio@gmail.com",
+  "author": "bryanrkcross@gmail.com",
   "license": "MIT",
   "preferGlobal": true,
   "os": [
@@ -28,16 +28,16 @@
     "linux",
     "win32"
   ],
-  "homepage": "https://github.com/sercheo87/convert-postman-jmeter#readme",
+  "homepage": "https://github.com/sercheo87/postman-jmeter#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sercheo87/convert-postman-jmeter"
+    "url": "https://github.com/sercheo87/postman-jmeter"
   },
   "bugs": {
-    "url": "https://github.com/sercheo87/convert-postman-jmeter/issues"
+    "url": "https://github.com/sercheo87/postman-jmeter/issues"
   },
   "bin": {
-    "convert-postman-jmeter": "./bin/convert-postman-jmeter"
+    "postman-jmeter": "./bin/postman-jmeter"
   },
   "devDependencies": {
     "chai": "^4.2.0",
