@@ -1,8 +1,9 @@
 name: Stress testing with JMeter
 
-on:  workflow_dispatch
-     repository_dispatch:
-       types: [load-test]
+on:  
+  workflow_dispatch
+  repository_dispatch:
+    types: [load-test]
 
 jobs:
   load-test-with-jmeter:
