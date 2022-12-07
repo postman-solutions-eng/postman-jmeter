@@ -42,5 +42,14 @@ jobs:
         with:
           name: jmeter-load-test-image
           path: screenshot_${{ env.DATE_STAMP }}.png
-            
-          
+      - name:  Add image to repo
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git status
+          mkdir -p assets/images/
+          mv screenshot_${{ env.DATE_STAMP }}.png assets/images/
+          git add assets/images/screenshot_${{ env.DATE_STAMP }}.png
+          git commit -m "added assets/images/screenshot_${{ env.DATE_STAMP }}.png"
+          git push
+          git status
