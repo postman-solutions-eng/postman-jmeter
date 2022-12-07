@@ -53,5 +53,5 @@ jobs:
           git commit -m "added assets/images/screenshot_${{ env.DATE_STAMP }}.png"
           git push
           git status
-          echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot__${{ env.DATE_STAMP }}.png?raw=true"
+          echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.DATE_STAMP }}.png?raw=true"
 
