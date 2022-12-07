@@ -33,17 +33,8 @@ jobs:
         run: |
           d=$( echo "$(date +'%Y%m%d%H%M%S')")
           echo "DATE_STAMP=$( echo $d)" >> $GITHUB_ENV
-      - name: Screenshot Website
-        uses: swinton/screenshot-website@v1.0.2
-        with:
-          source: https://github.com/swinton/screenshot-website
-          destination: screenshot.png
-          full-page: true
-      - name: Screenshot JMeter Results
-        id: screenshot_website
-        uses: swinton/screenshot-website@v1.0.2
-        with:
-          source: output/
-          destination: screenshot_${{ env.DATE_STAMP }}.png    
-          
+      - name: Screenshot Test
+        run: |
+          npm install --global capture-website-cli
+          capture-website output/index.html --output=screenshot_${{ env.DATE_STAMP }}.png          
           
