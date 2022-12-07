@@ -35,10 +35,9 @@ jobs:
           echo "DATE_STAMP=$( echo $d)" >> $GITHUB_ENV
       - name: Screenshot Results
         id: screenshot_website
-        uses: swinton/screenshot-website@v1.0.0
+        uses: swinton/screenshot-website@v1.0.2
         with:
-          delay: 10
-          source: file://output/
+          source: output/
           destination: screenshot_${{ env.DATE_STAMP }}.png    
           
           
