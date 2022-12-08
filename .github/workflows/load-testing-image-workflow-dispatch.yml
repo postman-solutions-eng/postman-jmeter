@@ -44,7 +44,7 @@ jobs:
             echo "WORKSPACE_ID=${{ github.event.client_payload.workspaceID }}" >> $GITHUB_ENV
             echo "VARIABLE_STRATEGY=${{ github.event.client_payload.variableStrategy }}" >> $GITHUB_ENV
             echo "COLLECTION_PATH=${{ github.event.client_payload.collectionPath }}" >> $GITHUB_ENV
-            echo "ENVIRONMENT_FILE"=${{ github.event.client_payload.event}}
+            echo "ENVIRONMENT_FILE"=${{ github.event.client_payload.environmentFile }}" >> $GITHUB_ENV
 
           fi
       - name: Install postman to jmeter converter
