@@ -54,4 +54,7 @@ jobs:
           git push
           git status
           echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.DATE_STAMP }}.png?raw=true"
+      - name: Send results to postman
+        run: | 
+          node ./bin/respond -w  774fda03-bf0a-4c99-b915-b7ecf1856162 -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ env.DATE_STAMP }}.png -k ${{ secrets.POSTMAN_API_KEY }}
 
