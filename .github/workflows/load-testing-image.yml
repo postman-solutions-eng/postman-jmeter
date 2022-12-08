@@ -56,5 +56,5 @@ jobs:
           echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
       - name: Send results to postman
         run: | 
-          node ./bin/respond -w  774fda03-bf0a-4c99-b915-b7ecf1856162 -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -k ${{ secrets.POSTMAN_API_KEY }}
+          node ./bin/respond -w  774fda03-bf0a-4c99-b915-b7ecf1856162 -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }}
 

@@ -11,6 +11,8 @@ const argv = require('yargs')
     .required('k','You must provide a Postman API key')
     .alias('u','Results URL')
     .required('u','You must provide a URL to response data')
+    .alias('r','Workflow run URL')
+    .required('r','You must supply a URL to the workflow run')
 
     .wrap(yargs.terminalWidth())
  /*   .check((argv) => {
@@ -49,7 +51,8 @@ const respond = require('../lib/respond');
 const options = {
     postmanAPIKey: argv.k,
     workspaceID: argv.w,
-    resultsURL: argv.u
+    resultsURL: argv.u,
+    workflowRunURL: argv.r
 };
 
 respond.respond(options);
