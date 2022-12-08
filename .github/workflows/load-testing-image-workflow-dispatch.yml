@@ -25,6 +25,7 @@ on:
         description: 'Exported Postman environment file'
         required: false
         type: string
+        default: ""
         
   
 jobs:
