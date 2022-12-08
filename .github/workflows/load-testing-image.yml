@@ -26,6 +26,7 @@ on:
 jobs:
   load-test-with-jmeter:
     runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v3
       - name: Install postman to jmeter converter
    #     run: | 
