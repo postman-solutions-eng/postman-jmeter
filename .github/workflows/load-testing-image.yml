@@ -1,4 +1,4 @@
-name: Stress testing with JMeter and Image
+name: JMeter Load Test (repository_dispatch)
 
 on:  
   repository_dispatch:
@@ -28,7 +28,7 @@ jobs:
         run: |
           cd ./apache-jmeter-5.5/bin 
           ./jmeter -n -t ${{ github.workspace }}/jmeter.jmx -l ${{ github.workspace }}/results.csv -e -o ${{ github.workspace }}/output
-      - name: Screenshot Test
+      - name: Generate screenshot of JMeter results
         run: |
           npm install --global capture-website-cli
           capture-website output/index.html --output=screenshot_${{ github.run_id }}.png --width 1280 --height 800
