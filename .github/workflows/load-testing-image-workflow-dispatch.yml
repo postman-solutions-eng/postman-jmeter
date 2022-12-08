@@ -61,14 +61,12 @@ jobs:
   #         ./jmeter -v
   #         pwd
       - name: Convert postman collection
+        if: ${{ env.ENVIRONMENT_FILE }} == ' ' }}
         run: | 
-          if [ $ENVIRONMENT_FILE  != " " ]; then
-            echo "Environment " $ENVIRONMENT_FILE
-            node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY -e=$ENVIRONMENT_FILE         
-          else
-            echo "No environment"
-            node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY
-          fi
+          node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY
+        if: ${{ env.ENVIRONMENT_FILE }} != ' ' }}
+        run: | 
+          node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY -e=$ENVIRONMENT_FILE         
       # - name: Run Stress Tests
       #   run: |
       #     cd ./apache-jmeter-5.5/bin 
