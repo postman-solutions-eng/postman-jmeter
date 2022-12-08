@@ -35,8 +35,8 @@ jobs:
       - name: Install postman to jmeter converter
   #  #     run: | 
   #  #       npm install -s postman-jmeter
-         run: | 
-           npm install
+        run: | 
+          npm install
   #     - name: install jmeter
   #       run: |
   #         java -version
