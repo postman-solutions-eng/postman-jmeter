@@ -14,9 +14,8 @@ on:
         default: 'resolve'
         type: choice
         options:
-        - info
-        - warning
-        - debug
+        - resolve
+        - transform
       collectionPath:
         description: 'Path in repo to collection to test'
         required: true
