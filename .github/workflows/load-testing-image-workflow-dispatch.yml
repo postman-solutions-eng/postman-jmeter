@@ -62,12 +62,12 @@ jobs:
   #         pwd
       - name: Convert postman collection
         run: | 
-          if [ ${{ env.ENVIRONMENT_FILE }} != " " ]; then
-            echo "Environment " ${{ env.ENVIRONMENT_FILE }}
-            node ./bin/convert-postman-jmeter -p ${{ env.COLLECTION_PATH }} -j jmeter.jmx -o -v=${{ env.VARIABLE_STRATEGY }} -e=${{ env.ENVIRONMENT_FILE }}            
+          if [ $ENVIRONMENT_FILE  != " " ]; then
+            echo "Environment " $ENVIRONMENT_FILE
+            node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY -e=$ENVIRONMENT_FILE         
           else
             echo "No environment"
-            node ./bin/convert-postman-jmeter -p ${{ env.COLLECTION_PATH }} -j jmeter.jmx -o -v=${{ env.VARIABLE_STRATEGY }} 
+            node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY
           fi
       # - name: Run Stress Tests
       #   run: |
@@ -96,5 +96,5 @@ jobs:
       #     echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
       # - name: Send results to postman
       #   run: | 
-      #     node ./bin/respond -w  ${{ env.WORKSPACE_ID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_WORKFLOW-$GITHUB_RUN_ID
+      #     node ./bin/respond -w  $WORKSPACE_ID -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_WORKFLOW-$GITHUB_RUN_ID
 
