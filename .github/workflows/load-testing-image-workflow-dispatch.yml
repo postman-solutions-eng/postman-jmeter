@@ -20,6 +20,12 @@ on:
         description: 'Path in repo to collection to test'
         required: true
         type: string
+        default: './examples/catfact-coll.json'
+      environment:
+        description: 'Exported Postman environment file'
+        required: false
+        type: string
+        
   
 jobs:
   load-test-with-jmeter:
@@ -40,7 +46,11 @@ jobs:
           pwd
       - name: Convert postman collection
         run: | 
-          node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
+          if [ inputs.environment = '' ]; then
+            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
+          else
+            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.environment }}
+          fi
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
