@@ -63,6 +63,8 @@ jobs:
       - name: Convert postman collection (no env)
         if: ${{ env.ENVIRONMENT_FILE  == ' ' }}
         run: | 
+          echo "Collection path: " $COLLECTION_PATH
+          echo "Variable Strategy: " $VARIABLE_STRATEGY
           node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY
       - name: Convert postman collection (with env)
         if: ${{ env.ENVIRONMENT_FILE  != ' ' }}
