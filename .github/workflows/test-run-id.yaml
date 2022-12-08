@@ -1,0 +1,18 @@
+name: Test runID
+
+on:  
+  workflow_dispatch:
+  repository_dispatch:
+    types: [load-test-image]
+
+jobs:
+  test-run-id:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run ID
+        run: | 
+          echo $GITHUB_RUN_ID
+          echo ${{ env.GITHUB_RUN_ID}}
+        run: npm install
+      
