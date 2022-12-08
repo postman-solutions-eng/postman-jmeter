@@ -35,6 +35,9 @@ jobs:
           name: jmeter-load-test
           path: |
             output
+      - name: Send results to postman
+        run: | 
+          node ./bin/respond -w  774fda03-bf0a-4c99-b915-b7ecf1856162 -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_20221207205059.png -k ${{ secrets.POSTMAN_API_KEY }}
 
           
           
