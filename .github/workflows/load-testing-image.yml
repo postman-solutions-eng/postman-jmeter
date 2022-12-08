@@ -24,11 +24,11 @@ jobs:
           pwd
       - name: Convert postman collection
         run: | 
-          node ./bin/convert-postman-jmeter -p ./test/catfact-coll.json -j catfacts.jmx -o -v=resolve
+          node ./bin/convert-postman-jmeter -p ${{ github.event.collectionPath }} -j jmeter.jmx -o -v=${{ github.event.variableStrategy }}
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
-          ./jmeter -n -t ${{ github.workspace }}/catfacts.jmx -l ${{ github.workspace }}/results.csv -e -o ${{ github.workspace }}/output
+          ./jmeter -n -t ${{ github.workspace }}/jmeter.jmx -l ${{ github.workspace }}/results.csv -e -o ${{ github.workspace }}/output
       - name: Create Date Stamp
         run: |
           d=$( echo "$(date +'%Y%m%d%H%M%S')")
