@@ -1,7 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1670515570706,538,get Breeds,200,OK,Thread Group 1-1,text,true,,775,166,1,1,https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io/breeds?limit=2,533,0,345
-1670515571246,165,get Random Fact,200,OK,Thread Group 1-1,text,true,,441,171,1,1,https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io/fact?max_length=200,164,0,0
-1670515571412,463,Get a list of facts,200,OK,Thread Group 1-1,text,true,,564,180,1,1,https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io/facts?max_length=200&limit=2,463,0,0
-1670515571877,402,Add Breed,200,OK,Thread Group 1-1,text,true,,419,347,1,1,https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io/breeds,402,0,0
-1670515572281,143,Add Fact,200,OK,Thread Group 1-1,text,true,,436,269,1,1,https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io/fact,142,0,0
-1670515572425,151,Fact - Constructed URL,200,OK,Thread Group 1-1,text,true,,441,171,1,1,https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io/fact?max_length=200,151,0,0
