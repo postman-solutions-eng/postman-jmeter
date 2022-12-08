@@ -32,6 +32,11 @@ const argv = require('yargs')
     .alias('b', 'batch')
     .describe('b', 'Export all projects postman from folder path by name *.postman_collection.json')
     .default('b', '')
+    .alias('k', 'postmanAPIKey')
+    .describe('k', 'Postman API Key')
+    .alias('w','workspaceID')
+    .default('w','774fda03-bf0a-4c99-b915-b7ecf1856162')
+   // .required('k', 'You must provide a Postman API key')
     .wrap(yargs.terminalWidth())
     .check((argv) => {
         let errors = "";
@@ -71,8 +76,12 @@ const options = {
     override: argv.o,
     batchFolder: argv.b,
     varMode: argv.v,
-    envFile: argv.e
+    envFile: argv.e,
+    postmanAPIKey: argv.k,
+    workspaceID: argv.w
 };
+
+
 
 
 convertPostmanJmeter.convert(options);
