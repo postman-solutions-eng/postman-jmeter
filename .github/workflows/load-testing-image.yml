@@ -2,6 +2,25 @@ name: Stress testing with JMeter and Image
 
 on:  
   workflow_dispatch:
+    inputs:
+      workspaceID:
+        description: 'ID of the workspace to send results to'
+        required: true
+        # default: 'warning'
+        type: string
+      variableStrategy:
+        description: 'Resolve variable values, or transform to JMeter syntax'
+        required: false
+        default: 'resolve'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      collectionPath:
+        description: 'Path in repo to collection to test'
+        required: true
+        type: string
   repository_dispatch:
     types: [load-test-image]
 
