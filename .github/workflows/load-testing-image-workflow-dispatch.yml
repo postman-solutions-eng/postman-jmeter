@@ -21,7 +21,7 @@ on:
         required: true
         type: string
         default: './examples/catfact-coll.json'
-      environment:
+      envFile:
         description: 'Exported Postman environment file'
         required: false
         type: string
@@ -46,12 +46,12 @@ jobs:
           pwd
       - name: Convert postman collection
         run: | 
-          if [ inputs.environment = '' ]; then
+          if [ inputs.envFile = '' ]; then
             echo "No environment"
             node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
           else
-            echo "Environment " $inputs.environment
-            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.environment }}
+            echo "Environment " $inputs.envFile
+            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.envFile }}
           fi
       - name: Run Stress Tests
         run: |
