@@ -33,6 +33,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Resolve environment variables
+        run: | 
+          if [ ${{ github.event_name }} == 'workflow_dispatch']; then
+            echo "WORKSPACE_ID=${{ github.inputs.workflowID }}"" >> $GITHUB_ENV
+            echo "VARIABLE_STRATEGY=${{ github.inputs.variableStrategy }}" >> $GITHUB_ENV
+            echo "COLLECTION_PATH=${{ github.inputs.collectionPath }}" >> $GITHUB_ENV
+            echo "ENVIRONMENT_FILE=${{ github.inputs.envFile }}" >> $GITHUB_ENV
+          else
+            echo "WORKSPACE_ID=${{ github.event.client_payload.workspaceID }}" >> $GITHUB_ENV
+            echo "VARIABLE_STRATEGY=${{ github.event.client_payload.variableStrategy }}" >> $GITHUB_ENV
+            echo "COLLECTION_PATH=${{ github.event.client_payload.collectionPath }}" >> $GITHUB_ENV
+            echo "ENVIRONMENT_FILE"=${{ github.event.client_payload.event}}
+
+          fi
       - name: Install postman to jmeter converter
   #  #     run: | 
   #  #       npm install -s postman-jmeter
@@ -48,12 +62,12 @@ jobs:
   #         pwd
       - name: Convert postman collection
         run: | 
-          if [ ${{ inputs.envFile }} != " " ]; then
-            echo "Environment " ${{ inputs.envFile }}
-            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.envFile }}            
+          if [ ${{ env.ENVIRONMENT_FILE }} != " " ]; then
+            echo "Environment " ${{ env.ENVIRONMENT_FILE }}
+            node ./bin/convert-postman-jmeter -p ${{ env.COLLECTION_PATH }} -j jmeter.jmx -o -v=${{ env.VARIABLE_STRATEGY }} -e=${{ env.ENVIRONMENT_FILE }}            
           else
             echo "No environment"
-            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
+            node ./bin/convert-postman-jmeter -p ${{ env.COLLECTION_PATH }} -j jmeter.jmx -o -v=${{ env.VARIABLE_STRATEGY }} 
           fi
       # - name: Run Stress Tests
       #   run: |
@@ -82,5 +96,5 @@ jobs:
       #     echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
       # - name: Send results to postman
       #   run: | 
-      #     node ./bin/respond -w  ${{ inputs.workspaceID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_RUN_NUMBER-$GITHUB_RUN_ID
+      #     node ./bin/respond -w  ${{ env.WORKSPACE_ID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_WORKFLOW-$GITHUB_RUN_ID
 
