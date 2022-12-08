@@ -27,6 +27,11 @@ jobs:
   load-test-with-jmeter:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup environment
+        - env: 
+            WORKSPACE_ID: ${{ github.event.client_payload.workspaceID }}
+            COLLECTION_PATH: ${{ github.event.client_payload.collectionPath }}
+            VARIABLE_STRATEGY: ${{ github.event.client_payload.variableStrategy }}
       - uses: actions/checkout@v3
       - name: Install postman to jmeter converter
    #     run: | 
@@ -42,7 +47,7 @@ jobs:
           pwd
       - name: Convert postman collection
         run: | 
-          node ./bin/convert-postman-jmeter -p github.event.client_payload.collectionPath -j jmeter.jmx -o -v=${{ github.event.client_payload.variableStrategy }}
+          node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=${{ github.event.client_payload.variableStrategy }}
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
