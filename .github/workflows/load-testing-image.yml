@@ -50,7 +50,7 @@ jobs:
       - name: Screenshot Test
         run: |
           npm install --global capture-website-cli
-          capture-website output/index.html --output=screenshot_${{ github.run_id }}.png --width 320 --height 200
+          capture-website output/index.html --output=screenshot_${{ github.run_id }}.png --width 500 --height 500
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
