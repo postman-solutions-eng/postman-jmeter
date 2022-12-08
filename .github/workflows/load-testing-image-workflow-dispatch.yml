@@ -48,12 +48,12 @@ jobs:
   #         pwd
       - name: Convert postman collection
         run: | 
-          if [ inputs.envFile == " " ]; then
+          if [ inputs.envFile != " " ]; then
+            echo "Environment " ${{ inputs.envFile }}
+            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.envFile }}            
+          else
             echo "No environment"
             node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
-          else
-            echo "Environment " ${{ inputs.envFile }}
-            node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.envFile }}
           fi
       # - name: Run Stress Tests
       #   run: |
