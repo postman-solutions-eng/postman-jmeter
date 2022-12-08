@@ -64,7 +64,7 @@ jobs:
         if: ${{ env.ENVIRONMENT_FILE  == ' ' }}
         run: | 
           node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY
-        name: Convert postman collection (with env)
+      - name: Convert postman collection (with env)
         if: ${{ env.ENVIRONMENT_FILE  != ' ' }}
         run: | 
           node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY -e=$ENVIRONMENT_FILE         
