@@ -3,7 +3,7 @@ name: Test runID
 on:  
   workflow_dispatch:
   repository_dispatch:
-    types: [load-test-image]
+    types: [testid]
 
 jobs:
   test-run-id:
