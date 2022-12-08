@@ -36,7 +36,7 @@ jobs:
       - name: Resolve environment variables (wkflow dispatch)
         if: ${{ github.event_name  == 'workflow_dispatch' }}
         run: |
-          echo "WORKSPACE_ID=${{ github.inputs.workflowID }}"" >> $GITHUB_ENV
+          echo "WORKSPACE_ID=${{ github.inputs.workflowID }}" >> $GITHUB_ENV
           echo "VARIABLE_STRATEGY=${{ github.inputs.variableStrategy }}" >> $GITHUB_ENV
           echo "COLLECTION_PATH=${{ github.inputs.collectionPath }}" >> $GITHUB_ENV
           echo "ENVIRONMENT_FILE=${{ github.inputs.envFile }}" >> $GITHUB_ENV
