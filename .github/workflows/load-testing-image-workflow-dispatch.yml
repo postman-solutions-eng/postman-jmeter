@@ -1,6 +1,25 @@
 name: Stress testing with JMeter and Image
 
 on:  
+  workflow_dispatch:
+    inputs:
+      workspaceID:
+        description: 'ID of the workspace to send results to'
+        required: true
+        # default: 'warning'
+        type: string
+      variableStrategy:
+        description: 'Resolve variable values, or transform to JMeter syntax'
+        required: false
+        default: 'resolve'
+        type: choice
+        options:
+        - resolve
+        - transform
+      collectionPath:
+        description: 'Path in repo to collection to test'
+        required: true
+        type: string
   
 jobs:
   load-test-with-jmeter:
@@ -21,7 +40,7 @@ jobs:
           pwd
       - name: Convert postman collection
         run: | 
-          node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j jmeter.jmx -o -v=${{ github.event.client_payload.variableStrategy }}
+          node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
@@ -49,5 +68,5 @@ jobs:
           echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
       - name: Send results to postman
         run: | 
-          node ./bin/respond -w  ${{ github.event.client_payload.workspaceID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }}
+          node ./bin/respond -w  ${{ inputs.workspaceID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }}
 
