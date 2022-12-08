@@ -47,8 +47,10 @@ jobs:
       - name: Convert postman collection
         run: | 
           if [ inputs.environment = '' ]; then
+            echo "No environment"
             node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
           else
+            echo "Environment " $inputs.environment
             node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.environment }}
           fi
       - name: Run Stress Tests
