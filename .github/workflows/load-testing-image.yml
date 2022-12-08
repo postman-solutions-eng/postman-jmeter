@@ -47,7 +47,7 @@ jobs:
           pwd
       - name: Convert postman collection
         run: | 
-          node ./bin/convert-postman-jmeter -p $COLLECTION_PATH -j jmeter.jmx -o -v=${{ github.event.client_payload.variableStrategy }}
+          node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j jmeter.jmx -o -v=${{ github.event.client_payload.variableStrategy }}
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
