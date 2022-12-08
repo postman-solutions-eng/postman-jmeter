@@ -1,7 +1,9 @@
 name: Stress testing with JMeter and Image
 
 on:  
-  
+  repository_dispatch:
+    types: [load-test-image]
+
 jobs:
   load-test-with-jmeter:
     runs-on: ubuntu-latest
