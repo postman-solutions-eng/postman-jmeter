@@ -42,6 +42,7 @@ jobs:
           echo "ENVIRONMENT_FILE=${{ github.inputs.envFile }}" >> $GITHUB_ENV
       - name: Resolve environment variables (repo dispatch)
         if: ${{ github.event_name  == 'repository_dispatch' }}
+        run: |
           echo "WORKSPACE_ID=${{ github.event.client_payload.workspaceID }}" >> $GITHUB_ENV
           echo "VARIABLE_STRATEGY=${{ github.event.client_payload.variableStrategy }}" >> $GITHUB_ENV
           echo "COLLECTION_PATH=${{ github.event.client_payload.collectionPath }}" >> $GITHUB_ENV
