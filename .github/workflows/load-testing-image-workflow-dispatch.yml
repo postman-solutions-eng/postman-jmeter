@@ -36,6 +36,7 @@ jobs:
       - name: Resolve environment variables (wkflow dispatch)
         if: ${{ github.event_name  == 'workflow_dispatch' }}
         run: |
+          echo "Workflow dispatch"
           echo "WORKSPACE_ID=${{ github.inputs.workflowID }}" >> $GITHUB_ENV
           echo "VARIABLE_STRATEGY=${{ github.inputs.variableStrategy }}" >> $GITHUB_ENV
           echo "COLLECTION_PATH=${{ github.inputs.collectionPath }}" >> $GITHUB_ENV
@@ -43,6 +44,7 @@ jobs:
       - name: Resolve environment variables (repo dispatch)
         if: ${{ github.event_name  == 'repository_dispatch' }}
         run: |
+          echo "Repo dispatch"
           echo "WORKSPACE_ID=${{ github.event.client_payload.workspaceID }}" >> $GITHUB_ENV
           echo "VARIABLE_STRATEGY=${{ github.event.client_payload.variableStrategy }}" >> $GITHUB_ENV
           echo "COLLECTION_PATH=${{ github.event.client_payload.collectionPath }}" >> $GITHUB_ENV
