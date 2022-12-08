@@ -50,7 +50,7 @@ jobs:
             echo "No environment"
             node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
           else
-            echo "Environment " $inputs.envFile
+            echo "Environment " ${{ inputs.envFile }}
             node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.envFile }}
           fi
       - name: Run Stress Tests
