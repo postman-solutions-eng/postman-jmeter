@@ -25,7 +25,7 @@ on:
         description: 'Exported Postman environment file'
         required: false
         type: string
-        default: ""
+        default: " "
         
   
 jobs:
@@ -48,7 +48,7 @@ jobs:
   #         pwd
       - name: Convert postman collection
         run: | 
-          if [ inputs.envFile == "" ]; then
+          if [ inputs.envFile == " " ]; then
             echo "No environment"
             node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }}
           else
