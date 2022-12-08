@@ -26,12 +26,6 @@ on:
 jobs:
   load-test-with-jmeter:
     runs-on: ubuntu-latest
-    steps:
-      - name: Setup environment
-        - env: 
-            WORKSPACE_ID: ${{ github.event.client_payload.workspaceID }}
-            COLLECTION_PATH: ${{ github.event.client_payload.collectionPath }}
-            VARIABLE_STRATEGY: ${{ github.event.client_payload.variableStrategy }}
       - uses: actions/checkout@v3
       - name: Install postman to jmeter converter
    #     run: | 
