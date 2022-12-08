@@ -36,22 +36,22 @@ jobs:
       - name: Screenshot Test
         run: |
           npm install --global capture-website-cli
-          capture-website output/index.html --output=screenshot_${{ env.GITHUB_RUN_ID }}.png
+          capture-website output/index.html --output=screenshot_${{ env.DATE_STAMP }}.png
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
           name: jmeter-load-test-image
-          path: screenshot_${{ env.GITHUB_RUN_ID }}.png
+          path: screenshot_${{ env.DATE_STAMP }}.png
       - name:  Add image to repo
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git status
           mkdir -p assets/images/
-          mv screenshot_${{ env.GITHUB_RUN_ID }}.png assets/images/
-          git add assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png
-          git commit -m "added assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png"
+          mv screenshot_${{ env.DATE_STAMP }}.png assets/images/
+          git add assets/images/screenshot_${{ env.DATE_STAMP }}.png
+          git commit -m "added assets/images/screenshot_${{ env.DATE_STAMP }}.png"
           git push
           git status
-          echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
+          echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.DATE_STAMP }}.png?raw=true"
 
