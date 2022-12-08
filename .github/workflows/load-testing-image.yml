@@ -47,10 +47,6 @@ jobs:
         run: |
           cd ./apache-jmeter-5.5/bin 
           ./jmeter -n -t ${{ github.workspace }}/jmeter.jmx -l ${{ github.workspace }}/results.csv -e -o ${{ github.workspace }}/output
-      - name: Create Date Stamp
-        run: |
-          d=$( echo "$(date +'%Y%m%d%H%M%S')")
-          echo "DATE_STAMP=$( echo $d)" >> $GITHUB_ENV
       - name: Screenshot Test
         run: |
           npm install --global capture-website-cli
