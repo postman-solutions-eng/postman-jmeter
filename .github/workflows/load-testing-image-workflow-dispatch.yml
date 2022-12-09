@@ -33,23 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Resolve environment variables (wkflow dispatch)
-        if: ${{ github.event_name  == 'workflow_dispatch' }}
-        env:
-          WORKSPACE_ID: ${{ inputs.workspaceID }}
-          COLLECTION_PATH: ${{ inputs.collectionPath }}
-          VARIABLE_STRATEGY: ${{ inputs.variableStrategy }}
-          ENVIRONMENT_FILE: ${{ inputs.environmentFile }}
-        run: | 
-          echo "Variables Set"
-      - name: Resolve environment variables (repo dispatch)
-        if: ${{ github.event_name  == 'repository_dispatch' }}
-        run: |
-          echo "WORKSPACE_ID=${{ github.event.client_payload.workspaceID }}" >> $GITHUB_ENV
-          echo "VARIABLE_STRATEGY=${{ github.event.client_payload.variableStrategy }}" >> $GITHUB_ENV
-          echo "COLLECTION_PATH=${{ github.event.client_payload.collectionPath }}" >> $GITHUB_ENV
-          echo "ENVIRONMENT_FILE"=${{ github.event.client_payload.environmentFile }}" >> $GITHUB_ENV
-          echo "Var Strat: ${{ github.inputs.variableStrategy }}"
+      
       - name: Install postman to jmeter converter
   #  #     run: | 
   #  #       npm install -s postman-jmeter
@@ -64,10 +48,9 @@ jobs:
   #         ./jmeter -v
   #         pwd
       - name: Convert postman collection (no env)
-        if: ${{ env.ENVIRONMENT_FILE  == ' ' }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: | 
-          echo "NO Env file present"
-          node ./bin/convert-postman-jmeter -p COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY
+          node ./bin/convert-postman-jmeter -p ${{ inputs.collectionPath }} -j jmeter.jmx -o -v=${{ inputs.variableStrategy }} -e=${{ inputs.environmentFile }}
       - name: Convert postman collection (with env)
         if: ${{ env.ENVIRONMENT_FILE  != ' ' }}
         run: | 
