@@ -28,12 +28,12 @@ jobs:
           echo $MESSAGE
 
       - name: Convert postman collection with environment
-        if: github.client_payload.envFile != ' '
+        if: github.client_payload.envFile != ''
         run: | 
           mkdir ./assets/${{ github.run_id}}
           node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j ./assets/${{ github.run_id }}/${{ github.run_id }}.jmx -o -v=${{ github.event.client_payload.variableStrategy }} -e ${{ github.event.client_payload.envFile }}
       - name: Convert postman collection without environment
-        if: github.client_payload.envFile == ' '
+        if: github.client_payload.envFile == ''
         run: | 
           echo $MESSAGE
           mkdir ./assets/${{ github.run_id}}
