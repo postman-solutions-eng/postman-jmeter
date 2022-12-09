@@ -35,11 +35,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: Resolve environment variables (wkflow dispatch)
         if: ${{ github.event_name  == 'workflow_dispatch' }}
-        run: |
-          echo "WORKSPACE_ID=${{ inputs.workspaceID }}" >> $GITHUB_ENV
-          echo "VARIABLE_STRATEGY=${{ inputs.variableStrategy }}" >> $GITHUB_ENV
-          echo "COLLECTION_PATH=${{ inputs.collectionPath }}" >> $GITHUB_ENV
-          echo "ENVIRONMENT_FILE=${{ inputs.envFile }}" >> $GITHUB_ENV
+        env:
+          WORKSPACE_ID: ${{ inputs.workspaceID }}
+          COLLECTION_PATH: ${{ inputs.collectionPath }}
+          VARIABLE_STRATEGY: ${{ inputs.variableStrategy }}
+          ENVIRONMENT_FILE: ${{ inputs.environmentFile }}
       - name: Resolve environment variables (repo dispatch)
         if: ${{ github.event_name  == 'repository_dispatch' }}
         run: |
@@ -69,7 +69,7 @@ jobs:
           echo "Variable Strategy: " ${{VARIABLE_STRATEGY}}
           echo "Workspace ID: " ${{WORKSPACE_ID}}
           echo "Environment file: " ${{ENVIRONMENT_FILE}}
-          node ./bin/convert-postman-jmeter -p ${{COLLECTION_PATH}} -j jmeter.jmx -o -v=${{VARIABLE_STRATEGY}}
+          node ./bin/convert-postman-jmeter -p COLLECTION_PATH -j jmeter.jmx -o -v=$VARIABLE_STRATEGY
       - name: Convert postman collection (with env)
         if: ${{ env.ENVIRONMENT_FILE  != ' ' }}
         run: | 
