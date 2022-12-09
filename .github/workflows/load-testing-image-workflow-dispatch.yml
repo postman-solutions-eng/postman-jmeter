@@ -40,6 +40,8 @@ jobs:
           COLLECTION_PATH: ${{ inputs.collectionPath }}
           VARIABLE_STRATEGY: ${{ inputs.variableStrategy }}
           ENVIRONMENT_FILE: ${{ inputs.environmentFile }}
+        run: | 
+          echo "Variables Set"
       - name: Resolve environment variables (repo dispatch)
         if: ${{ github.event_name  == 'repository_dispatch' }}
         run: |
