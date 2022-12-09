@@ -41,7 +41,9 @@ jobs:
           echo "COLLECTION_PATH=${{ inputs.collectionPath }}" >> $GITHUB_ENV
           echo "ENVIRONMENT_FILE=${{ inputs.envFile }}" >> $GITHUB_ENV
           echo "Var Strat: ${{ inputs.variableStrategy }}"
+          echo "Var Strat env: $VARIABLE_STRATEGY"
           echo "Var Strat env: ${{ env.VARIABLE_STRATEGY }}"
+          echo $VARIABLE_STRATEGY
           set
       - name: Resolve environment variables (repo dispatch)
         if: ${{ github.event_name  == 'repository_dispatch' }}
