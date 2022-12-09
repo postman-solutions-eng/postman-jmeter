@@ -14,7 +14,7 @@ const argv = require('yargs')
     .alias('r','Workflow run URL')
     .required('r','You must supply a URL to the workflow run')
     .alias('n', 'Workflow run number')
-    .required('r', 'You must supply a run number')
+    .required('n', 'You must supply a run number')
 
     .wrap(yargs.terminalWidth())
  /*   .check((argv) => {

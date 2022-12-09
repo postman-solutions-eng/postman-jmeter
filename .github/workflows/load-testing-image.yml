@@ -47,11 +47,11 @@ jobs:
           git add assets/images/screenshot_${{ github.run_id }}.png
           git add assets/jmx/${{ github.run_id }}.jmx
 
-          git commit -m "added assets/images/screenshot_${{ github.run_id }}.png"
+          git commit -m "added JMeter jmx file and results screenshot to assets"
           git push
           git status
           echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
       - name: Send results to postman
         run: | 
-          node ./bin/respond -w  ${{ github.event.client_payload.workspaceID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_RUN_NUMBER
+          node ./bin/respond -w  ${{ github.event.client_payload.workspaceID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/images/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_RUN_ID
 
