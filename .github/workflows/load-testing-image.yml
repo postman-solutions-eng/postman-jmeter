@@ -29,6 +29,7 @@ jobs:
       - name: Convert postman collection without environment
         if: github.client_payload.envFile == ' '
         run: | 
+          echo ${{ github.client_payload.envFile }}
           mkdir ./assets/${{ github.run_id}}
           node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j ./assets/${{ github.run_id }}/${{ github.run_id }}.jmx -o -v=${{ github.event.client_payload.variableStrategy }} 
 
