@@ -1,15 +1,7 @@
 **NOTE**: This utility is based on the work of [sercheo87](https://github.com/sercheo87/convert-postman-jmeter).  
 
 # postman-jmeter
-<!--
-[![Node.js Publish](https://github.com/sercheo87/convert-postman-jmeter/actions/workflows/npm-publish.yml/badge.svg?event=page_build)](https://github.com/sercheo87/convert-postman-jmeter/actions/workflows/npm-publish.yml)
-![GitHub issues](https://img.shields.io/github/issues/sercheo87/convert-postman-jmeter.svg)
-![npm](https://img.shields.io/npm/v/3.svg)
-![NPM](https://img.shields.io/npm/l/1.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/sercheo87/convert-postman-jmeter.svg)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/sercheo87/convert-postman-jmeter.svg)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=convert-postman-jmeter&metric=alert_status)](https://sonarcloud.io/dashboard?id=convert-postman-jmeter)
--->
+
 This tool convert projects [Postman](https://www.getpostman.com) to [JMeter](https://jmeter.apache.org)
 
 - [NPM Site](https://www.npmjs.com/package/postman-jmeter)
@@ -37,6 +29,8 @@ Usage: convert-postman-jmeter -p [file] -j [file] [-o] [-b] [-v=resolve|transfor
 | `-o, --overwrite` | Overwrite existing .jmx file | `boolean` | `optional`|
 | `-v, --variables` | Variable resolution strategy | `string` | `required`| `transform`, `resolve` |
 | `-b, --batch` | Process all collection files (`*.postman_collection.json`) in directory | `boolean` | `optional`|  |
+| `-k, --postmanAPIKey` | Postman API Key.  Consider using an environment variable locally and a secret in your CI/CD system | `string` | `required`|  |
+| `-w, --workspaceID` | UID for workspace to report test results back to.  Only useful in CI/CD context | `string` | `optional`|  |
 
 ## Variable Resolution Strategy
 
@@ -60,6 +54,10 @@ How to handle variables defined at the collection and environment level.
 This utility is designed to enable load-testing via JMeter as part of a CI/CD pipeline.  An example can be found [in this repo](https://github.com/BidnessForB/postman-jmeter/blob/main/.github/workflows/JMeter-load-testing.yaml).  
 
 NOTE: Protocol is always resolved, even if inferred from variable values.  
+
+## Reporting results back to Postman
+
+If desired, test results in the form of a screenshot of the JMeter HTML report can be sent back to a workspace in Postman.  See t `./github/workflows/load-testing-image.yml` for an example.
 
 ## Limitations
 

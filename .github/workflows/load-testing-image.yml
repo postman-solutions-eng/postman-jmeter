@@ -24,7 +24,7 @@ jobs:
       - name: Convert postman collection
         run: | 
           mkdir ./assets/${{ github.run_id}}
-          node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j ./assets/${{ github.run_id }}/${{ github.run_id }}.jmx -o -v=${{ github.event.client_payload.variableStrategy }}
+          node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j ./assets/${{ github.run_id }}/${{ github.run_id }}.jmx -o -v=${{ github.event.client_payload.variableStrategy }} -e=${{ github.event.client_payload.envFile }}
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
