@@ -45,6 +45,7 @@ jobs:
           # mkdir -p assets/images/
           # mv screenshot_${{ github.run_id }}.png assets/images/
           git add assets/images/screenshot_${{ github.run_id }}.png
+          git add assets/jmx/${{ github.run_id }}.jmx
 
           git commit -m "added assets/images/screenshot_${{ github.run_id }}.png"
           git push
