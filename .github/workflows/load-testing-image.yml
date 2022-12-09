@@ -46,7 +46,7 @@ jobs:
           git status
           # mkdir -p assets/images/
           # mv screenshot_${{ github.run_id }}.png assets/images/
-          git add assets/${{ github.run_id/*
+          git add assets/${{ github.run_id }}/*
           git commit -m "added JMeter jmx file and results screenshot to assets"
           git push
           git status
