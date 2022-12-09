@@ -1,5 +1,7 @@
 **NOTE**: This utility is based on the work of [sercheo87](https://github.com/sercheo87/convert-postman-jmeter).  
 
+⚠️  **CAUTION**: ⚠️ We are writing results files back to the repo in our workflows, which is an absolute NO-NO in any production app. But, this is a hack, so it's OK.  However, to avoid unnecessary git-related lulz, please fork this repo and use your fork for demos.  
+
 # postman-jmeter
 
 This tool convert projects [Postman](https://www.getpostman.com) to [JMeter](https://jmeter.apache.org)
