@@ -28,7 +28,7 @@ jobs:
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.5/bin 
-          ./jmeter -n -t ${{ github.workspace }}/assets/jmx/${{ github.run_id }}.jmx -l ${{ github.workspace }}/results.csv -e -o ${{ github.workspace }}/output
+          ./jmeter -n -t ${{ github.workspace }}/assets/${{ github.run_id }}/${{ github.run_id }}.jmx -l ${{ github.workspace }}/results.csv -e -o ${{ github.workspace }}/output
       - name: Generate screenshot of JMeter results
         run: |
           npm install --global capture-website-cli
