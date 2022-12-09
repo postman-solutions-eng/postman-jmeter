@@ -40,6 +40,8 @@ jobs:
           echo "VARIABLE_STRATEGY=${{ github.inputs.variableStrategy }}" >> $GITHUB_ENV
           echo "COLLECTION_PATH=${{ github.inputs.collectionPath }}" >> $GITHUB_ENV
           echo "ENVIRONMENT_FILE=${{ github.inputs.envFile }}" >> $GITHUB_ENV
+          echo "Var Strat: ${{ github.inputs.variableStrategy }}"
+          echo "Var Strat env: ${{ env.VARIABLE_STRATEGY }}"
           set
       - name: Resolve environment variables (repo dispatch)
         if: ${{ github.event_name  == 'repository_dispatch' }}
@@ -48,6 +50,7 @@ jobs:
           echo "VARIABLE_STRATEGY=${{ github.event.client_payload.variableStrategy }}" >> $GITHUB_ENV
           echo "COLLECTION_PATH=${{ github.event.client_payload.collectionPath }}" >> $GITHUB_ENV
           echo "ENVIRONMENT_FILE"=${{ github.event.client_payload.environmentFile }}" >> $GITHUB_ENV
+          echo "Var Strat: ${{ github.inputs.variableStrategy }}"
           set
       - name: Install postman to jmeter converter
   #  #     run: | 
