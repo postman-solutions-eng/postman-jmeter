@@ -37,5 +37,5 @@ jobs:
           curl -X POST https://api.github.com/repos/postman-solutions-eng/postman-jmeter/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.GH_PAT }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "workspaceID": "${{ inputs.workspaceID }}"", "variableStrategy": "${{ inputs.variableStrategy }}","collectionPath":"${{ inputs.collectionPath }}", "envFile": "${{ inputs.envFile }}" }}'
+          --data '{"event_type": "Trigger Workflow", "client_payload": { "workspaceID": "${{ inputs.workspaceID }}
       
