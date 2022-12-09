@@ -53,5 +53,6 @@ jobs:
           echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
       - name: Send results to postman
         run: | 
+          echo "Path: " + ${{ github.client_payload.collectionPath }} 
           node ./bin/respond -w  ${{ github.event.client_payload.workspaceID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/${{ github.run_id }}/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_RUN_ID -c ${{ github.client_payload.collectionPath }} -b $GITHUB_WORKFLOW
 
