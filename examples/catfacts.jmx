@@ -34,11 +34,10 @@
                 <stringProp name="Argument.value">2</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.name">limit</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">catfact.ninja</stringProp>
+          <stringProp name="HTTPSampler.domain">d5828dd9-cdeb-4da7-a1cb-e132a941a428.mock.pstmn.io</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -66,11 +65,10 @@
                 <stringProp name="Argument.value">200</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.name">max_length</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">catfact.ninja</stringProp>
+          <stringProp name="HTTPSampler.domain">d5828dd9-cdeb-4da7-a1cb-e132a941a428.mock.pstmn.io</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -98,18 +96,16 @@
                 <stringProp name="Argument.value">200</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.name">max_length</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
               </elementProp>
               <elementProp name="limit" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">true</boolProp>
                 <stringProp name="Argument.value">2</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.name">limit</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">catfact.ninja</stringProp>
+          <stringProp name="HTTPSampler.domain">d5828dd9-cdeb-4da7-a1cb-e132a941a428.mock.pstmn.io</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -146,7 +142,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">catfact.ninja</stringProp>
+          <stringProp name="HTTPSampler.domain">d5828dd9-cdeb-4da7-a1cb-e132a941a428.mock.pstmn.io</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -180,7 +176,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">catfact.ninja</stringProp>
+          <stringProp name="HTTPSampler.domain">d5828dd9-cdeb-4da7-a1cb-e132a941a428.mock.pstmn.io</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -235,7 +231,7 @@
           <collectionProp name="Arguments.arguments">
             <elementProp name="baseUrl" elementType="Argument">
               <stringProp name="Argument.name">baseUrl</stringProp>
-              <stringProp name="Argument.value">catfact.ninja</stringProp>
+              <stringProp name="Argument.value">d5828dd9-cdeb-4da7-a1cb-e132a941a428.mock.pstmn.io</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="breedName" elementType="Argument">
@@ -256,6 +252,51 @@
             <elementProp name="tld" elementType="Argument">
               <stringProp name="Argument.name">tld</stringProp>
               <stringProp name="Argument.value">io</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="owner" elementType="Argument">
+              <stringProp name="Argument.name">owner</stringProp>
+              <stringProp name="Argument.value">postman-solutions-eng</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="repo" elementType="Argument">
+              <stringProp name="Argument.name">repo</stringProp>
+              <stringProp name="Argument.value">postman-jmeter</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GitHubPAT" elementType="Argument">
+              <stringProp name="Argument.name">GitHubPAT</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="event_type" elementType="Argument">
+              <stringProp name="Argument.name">event_type</stringProp>
+              <stringProp name="Argument.value">load-test-image</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="postmanAPIKey" elementType="Argument">
+              <stringProp name="Argument.name">postmanAPIKey</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="workspaceID" elementType="Argument">
+              <stringProp name="Argument.name">workspaceID</stringProp>
+              <stringProp name="Argument.value">774fda03-bf0a-4c99-b915-b7ecf1856162</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="collectionPath" elementType="Argument">
+              <stringProp name="Argument.name">collectionPath</stringProp>
+              <stringProp name="Argument.value">./examples/catfact-coll.json</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="variableStrategy" elementType="Argument">
+              <stringProp name="Argument.name">variableStrategy</stringProp>
+              <stringProp name="Argument.value">resolve</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="environmentFile" elementType="Argument">
+              <stringProp name="Argument.name">environmentFile</stringProp>
+              <stringProp name="Argument.value">./examples/catfact-env.json</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
