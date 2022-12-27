@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Hashtable;
 
 import com.google.gson.Gson;
 import java.io.File;
@@ -22,7 +23,7 @@ private PostmanInfo info = null;
 private PostmanEvent[] event = null;
 private PostmanVariable[] variable = null;
 
-public PostmanItem[] getItem() {
+public PostmanItem[] getItems() {
     return item;
 }
 
@@ -30,11 +31,11 @@ public PostmanInfo getInfo() {
     return info;
 }
 
-public PostmanEvent[] getEvent() {
+public PostmanEvent[] getEvents() {
     return event;
 }
 
-public PostmanVariable[] getVariable() {
+public PostmanVariable[] getVariables() {
     return variable;
 }
 
@@ -91,6 +92,12 @@ public PostmanCollection(String name) {
     this.info = new PostmanInfo();
     this.setName(name);
 }
+
+public Hashtable<String, PostmanRequest> getRequests() {
+    return null;
+}
+
+
 
 
    
