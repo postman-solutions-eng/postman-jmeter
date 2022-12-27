@@ -1,0 +1,91 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Transform",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args":[
+                "-p${workspaceFolder}/test/catfact-coll.json"
+                ,"-j${workspaceFolder}/test/catfacts.jmx"
+                ,"-v=transform"
+                ,"-o"
+                
+               
+            ],
+            "program": "${workspaceFolder}/bin/convert-postman-jmeter"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Resolve",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args":[
+                "-p${workspaceFolder}/test/catfact-coll.json"
+                ,"-j${workspaceFolder}/test/catfacts.jmx"
+                ,"-v=resolve"
+                ,"-o"
+                
+               
+            ],
+            "program": "${workspaceFolder}/bin/convert-postman-jmeter"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Transform w/ Env",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args":[
+                "-p${workspaceFolder}/test/catfact-coll.json"
+                ,"-j${workspaceFolder}/test/catfacts.jmx"
+                ,"-e${workspaceFolder}/test/catfact-env.json"
+                ,"-v=transform"
+                ,"-o"
+                
+               
+            ],
+            "program": "${workspaceFolder}/bin/convert-postman-jmeter"
+        }
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Resolve with env",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args":[
+                "-p${workspaceFolder}/test/catfact-coll.json"
+                ,"-j${workspaceFolder}/test/catfacts.jmx"
+                ,"-e${workspaceFolder}/test/catfact-env.json"
+                ,"-v=resolve"
+                ,"-o"
+               
+            ],
+            "program": "${workspaceFolder}/bin/convert-postman-jmeter"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Bad params",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args":[
+                "-p${workspaceFolder}/test/catfttact-coll.json"
+                ,"-j${workspaceFolder}/test/catfacts.jmx"
+                ,"-v=transform"
+                ,"-o=foo"
+                
+               
+            ],
+            "program": "${workspaceFolder}/bin/convert-postman-jmeter"
+        }
+    ]
+}

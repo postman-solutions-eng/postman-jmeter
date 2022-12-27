@@ -1,0 +1,431 @@
+{
+	"info": {
+		"_postman_id": "b69694f6-bba5-4d3c-b71c-069ce0191dd5",
+		"name": "Cat Fact API",
+		"description": "Contact Support:\n Email: contact@catfact.ninja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23889826"
+	},
+	"item": [
+		{
+			"name": "get Breeds",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/breeds?limit=2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"breeds"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2",
+							"description": "This is a description"
+						}
+					]
+				},
+				"description": "Returns a a list of breeds"
+			},
+			"response": [
+				{
+					"name": "Normal operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/breeds?limit=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"breeds"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"breed\": \"laboris amet in\",\n    \"country\": \"commodo voluptate\",\n    \"origin\": \"consequat ipsum\",\n    \"coat\": \"Excepteur\",\n    \"pattern\": \"dolore tempor consequat irure\"\n  },\n  {\n    \"breed\": \"non dolore\",\n    \"country\": \"incididunt aliqua\",\n    \"origin\": \"eu laborum\",\n    \"coat\": \"sed sit deserunt cillum voluptate\",\n    \"pattern\": \"eu voluptate cupidatat\"\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "get Random Fact",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/fact?max_length=200",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"fact"
+					],
+					"query": [
+						{
+							"key": "max_length",
+							"value": "200",
+							"description": "maximum length of returned fact"
+						}
+					]
+				},
+				"description": "Returns a random fact"
+			},
+			"response": [
+				{
+					"name": "Normal response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/fact?max_length=200",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							],
+							"query": [
+								{
+									"key": "max_length",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"fact\": \"amet non\",\n  \"length\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "Get a list of facts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/facts?max_length=200&limit=2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"facts"
+					],
+					"query": [
+						{
+							"key": "max_length",
+							"value": "200"
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"description": "limit the amount of results returned"
+						}
+					]
+				},
+				"description": "Returns a a list of facts"
+			},
+			"response": [
+				{
+					"name": "successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/facts?max_length=200&limit=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"facts"
+							],
+							"query": [
+								{
+									"key": "max_length",
+									"value": "200"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"fact\": \"pariatur tempor voluptate Lorem fugiat\",\n    \"length\": 200\n  },\n  {\n    \"fact\": \"sint id deserunt reprehenderit aliqua\",\n    \"length\": 200\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add Breed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"breed\": \"Furry\",\n    \"country\": \"Moldova\",\n    \"origin\": \"Upper Volta\",\n    \"coat\": \"Extensive\",\n    \"pattern\": \"Tortoise Shell\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/breeds",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"breeds"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Breed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n   \"status\":\"Success\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{baseUrl}/breeds",
+							"host": [
+								"{baseUrl}"
+							],
+							"path": [
+								"breeds"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"status\":\"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Fact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"breed\":\"{{breedName}}\"\n    ,\"fact\":\"A new fact about this breed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/fact",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"fact"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Fact",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"breed\":\"{{breedName}}\"\n    ,\"fact\":\"A new fact about this breed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/fact",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\":\"Breed added successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Fact - Constructed URL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{server}}.{{tld}}/fact?max_length=200",
+					"protocol": "https",
+					"host": [
+						"{{server}}",
+						"{{tld}}"
+					],
+					"path": [
+						"fact"
+					],
+					"query": [
+						{
+							"key": "max_length",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Normal response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/fact?max_length=200",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							],
+							"query": [
+								{
+									"key": "max_length",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"fact\": \"amet non\",\n  \"length\": 200\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io",
+			"type": "string"
+		},
+		{
+			"key": "breedName",
+			"value": "Nubian",
+			"type": "string"
+		},
+		{
+			"key": "protocol",
+			"value": "https",
+			"type": "string"
+		},
+		{
+			"key": "server",
+			"value": "a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn",
+			"type": "string"
+		},
+		{
+			"key": "tld",
+			"value": "io",
+			"type": "string"
+		}
+	]
+}

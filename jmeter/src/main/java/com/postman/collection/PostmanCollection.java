@@ -22,6 +22,7 @@ private PostmanInfo info = null;
 private PostmanEvent[] event = null;
 private PostmanVariable[] variable = null;
 //private Gson _gson = null;
+private String _json = "";
 
 
 
@@ -45,16 +46,21 @@ public static PostmanCollection PMCFactory(String pathToJson) throws FileNotFoun
         }
         gson = new Gson();
         pmcRetVal = gson.fromJson(strRawItem, PostmanCollection.class);
-        //pmcRetVal.setGson(gson);
+        pmcRetVal.setJson(strRawItem);
             
 
 
     return pmcRetVal;
 }
 
-//public void setGson(Gson gson) {
-//    this._gson = gson;
-//}
+public void setJson(String json) {
+   this._json = json;
+}
+
+public String getJson() {
+    Gson gson = new Gson();
+    return gson.toJson(this);
+}
 
 public void setName(String name) {
     this.info.setName(name);

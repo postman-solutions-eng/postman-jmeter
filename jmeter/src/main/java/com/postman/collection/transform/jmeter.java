@@ -22,6 +22,8 @@ public class jmeter
         String filePath = new File("").getAbsolutePath();
         PostmanCollection pmcTest = PostmanCollection.PMCFactory(filePath + "/jmeter/src/main/resources/com/postman/collection/catfact-collx.json");
         System.out.println("Its done");
+        System.out.println(pmcTest.getJson());
+        
         
     }
 
