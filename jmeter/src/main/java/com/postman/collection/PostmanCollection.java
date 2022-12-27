@@ -21,8 +21,28 @@ private PostmanItem[] item = null;
 private PostmanInfo info = null;
 private PostmanEvent[] event = null;
 private PostmanVariable[] variable = null;
-//private Gson _gson = null;
-private String _json = "";
+
+public PostmanItem[] getItem() {
+    return item;
+}
+
+public PostmanInfo getInfo() {
+    return info;
+}
+
+public PostmanEvent[] getEvent() {
+    return event;
+}
+
+public PostmanVariable[] getVariable() {
+    return variable;
+}
+
+public PostmanAuth getAuth() {
+    return auth;
+}
+
+private PostmanAuth auth = null;
 
 
 
@@ -46,16 +66,13 @@ public static PostmanCollection PMCFactory(String pathToJson) throws FileNotFoun
         }
         gson = new Gson();
         pmcRetVal = gson.fromJson(strRawItem, PostmanCollection.class);
-        pmcRetVal.setJson(strRawItem);
+        
             
 
 
     return pmcRetVal;
 }
 
-public void setJson(String json) {
-   this._json = json;
-}
 
 public String getJson() {
     Gson gson = new Gson();
@@ -70,9 +87,12 @@ public String getName() {
     return this.info.getName();
 }
 
-/* public String toJson() {
-    return this._gson.toJson(this);
-} */
+public PostmanCollection(String name) {
+    this.info = new PostmanInfo();
+    this.setName(name);
+}
+
+
    
     
 }

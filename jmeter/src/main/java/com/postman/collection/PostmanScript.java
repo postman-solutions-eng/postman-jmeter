@@ -11,4 +11,24 @@ public class PostmanScript {
             exec = Exec;
     }
 
+
+    public String getType() {
+        return type;
+    }
+
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+    public String[] getExec() {
+        return exec;
+    }
+
+
+    public void setExec(String[] exec) {
+        this.exec = exec;
+    }
+
 }
