@@ -1,6 +1,8 @@
 package com.postman.collection;
 
-public class PostmanAPIKey {
+import com.google.gson.*;;
+
+public class PostmanAPIKey implements IPostmanCollectionElement {
     private String type = "";
     private String value = "";
     private String key = "";
@@ -11,6 +13,8 @@ public class PostmanAPIKey {
         this.key = key;
     }
 
+    
+    
     public String getType() {
         return type;
     }
@@ -29,6 +33,14 @@ public class PostmanAPIKey {
   
     public void setKey(String key) {
         this.key = key;
+    }
+
+
+
+    @Override
+    public String toJson(boolean escaped, enumVariableResolution variableStrategy) {
+        
+        return  new Gson().toJson(this);
     }
 
     

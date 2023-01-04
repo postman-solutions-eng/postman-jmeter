@@ -21,10 +21,23 @@ public class jmeter
     {
         String filePath = new File("").getAbsolutePath();
         PostmanCollection pmcTest = PostmanCollection.PMCFactory(filePath + "/jmeter/src/main/resources/com/postman/collection/catfact-complete-coll.json");
-        System.out.println("Its done");
-        System.out.println(pmcTest.getJson());
         
-        
+        //System.out.println(pmcTest.toJson(false, enumVariableResolution.NONE));
+        PostmanItem item = pmcTest.getItem("Breeds", false);
+         /* item = pmcTest.getItem("Facts", false);
+         item = pmcTest.getItem("get Random Fact", false);
+         item = pmcTest.getItem("Get a list of facts", false);
+         item = pmcTest.getItem("Add Breed", false);
+         item = pmcTest.getItem("Get a Specific Fact", false);
+         item = pmcTest.getItem("get Breeds", false);
+         */
+
+
+        PostmanItem newItem = new PostmanItem("new Folder");
+        pmcTest.addItem(newItem, 2);
+        System.out.println("ITEM: " + newItem.getName() + " TYPE: " + newItem.getItemType());// + " PARENT: " + item.getParent());
+        pmcTest.removeItem(newItem);
+        System.out.println("ITEM: " + newItem.getName() + " TYPE: " + newItem.getItemType());// + " PARENT: " + item.getParent());
     }
 
     public static void Transform()

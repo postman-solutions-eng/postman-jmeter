@@ -1,6 +1,8 @@
 package com.postman.collection;
 
-public class PostmanAuth {
+import com.google.gson.*;
+
+public class PostmanAuth implements IPostmanCollectionElement {
     
     private String type = "";
     private PostmanAPIKey[] apikey = null;
@@ -8,6 +10,28 @@ public class PostmanAuth {
     public String getType() {
         return type;
     }
+
+    
+    @Override
+    public String getKey() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    @Override
+    public void setKey(String key) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+    @Override
+    public String toJson(boolean escaped, enumVariableResolution variableStrategy) {
+        // TODO Auto-generated method stub
+        return new Gson().toJson(this);
+    }
+
 
     public void setType(String type) {
         this.type = type;

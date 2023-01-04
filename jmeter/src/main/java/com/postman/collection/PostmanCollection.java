@@ -8,31 +8,37 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 import com.google.gson.Gson;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import com.google.gson.Gson;
 
 
-public class PostmanCollection {
+public class PostmanCollection extends PostmanItem 
+{
 
 
-private PostmanItem[] item = null;
-
+//private PostmanItem[] item = null;
 private PostmanInfo info = null;
-private PostmanEvent[] event = null;
+//private PostmanEvent[] event = null;
 private PostmanVariable[] variable = null;
+private PostmanAuth auth = null;
+//private PostmanItem parent = null;
 
-public PostmanItem[] getItems() {
+/*public PostmanItem[] getItems() {
     return item;
 }
 
+public enumPostmanItemType getItemType() {
+    return enumPostmanItemType.COLLECTION;
+}
+*/
+
 public PostmanInfo getInfo() {
     return info;
-}
-
-public PostmanEvent[] getEvents() {
-    return event;
 }
 
 public PostmanVariable[] getVariables() {
@@ -42,10 +48,6 @@ public PostmanVariable[] getVariables() {
 public PostmanAuth getAuth() {
     return auth;
 }
-
-private PostmanAuth auth = null;
-
-
 
 public static PostmanCollection PMCFactory(String pathToJson) throws FileNotFoundException, IOException {
     PostmanCollection pmcRetVal = null;
@@ -68,38 +70,68 @@ public static PostmanCollection PMCFactory(String pathToJson) throws FileNotFoun
         gson = new Gson();
         pmcRetVal = gson.fromJson(strRawItem, PostmanCollection.class);
         
+        
+        
             
 
 
     return pmcRetVal;
 }
 
-
-public String getJson() {
-    Gson gson = new Gson();
-    return gson.toJson(this);
+public PostmanItem getItemParent(String key) {
+    return this.getItem(key, true);
 }
 
-public void setName(String name) {
-    this.info.setName(name);
-}
+/* public PostmanItem getItem(String key, boolean parent) {
+    PostmanItem result = null;
+    if (this.item == null)
+    {
+        return null;
+    }
+    //recursively traverse items looking for name == key
+    for (PostmanItem curItem: item) {
+        System.out.println("Parsing: " + this.getName() + " PARENT: " + parent);
+        if (item == null)
+          return null;
+        if (curItem.getName().equals(key))
+        {
+            if (!parent) {
+                result = curItem;
+            }
+            else
+            {
+                result = (PostmanItem) this;
+            }
+            
+            break;
+        }
+        else
+        {
+            result = curItem.getItem(key, parent);
+            if (result != null) {
+                break;
+            }
+        }
+        
+    }
 
-public String getName() {
-    return this.info.getName();
+    return result;
 }
-
-public PostmanCollection(String name) {
-    this.info = new PostmanInfo();
-    this.setName(name);
-}
-
+ */
 public Hashtable<String, PostmanRequest> getRequests() {
     return null;
 }
 
+@Override
+public String getKey() {
+    // TODO Auto-generated method stub
+    return null;
+}
 
-
-
-   
+@Override
+public void setKey(String key) {
+    // TODO Auto-generated method stub
     
+}
+
 }
