@@ -21,9 +21,10 @@ public class jmeter
     {
         String filePath = new File("").getAbsolutePath();
         PostmanCollection pmcTest = PostmanCollection.PMCFactory(filePath + "/jmeter/src/main/resources/com/postman/collection/catfact-complete-coll.json");
+        PostmanCollection pmcWeather = PostmanCollection.PMCFactory(filePath +  "/jmeter/src/main/resources/com/postman/collection/weather-coll.json");
         
         //System.out.println(pmcTest.toJson(false, enumVariableResolution.NONE));
-        PostmanItem item = pmcTest.getItem("Breeds", false);
+        //PostmanItem item = pmcTest.getItem("Breeds", false);
          /* item = pmcTest.getItem("Facts", false);
          item = pmcTest.getItem("get Random Fact", false);
          item = pmcTest.getItem("Get a list of facts", false);
@@ -34,10 +35,12 @@ public class jmeter
 
 
         PostmanItem newItem = new PostmanItem("new Folder");
-        pmcTest.addItem(newItem, 2);
+        //pmcTest.addItem(newItem);
+        pmcTest.addItem(pmcWeather, 2);
         System.out.println("ITEM: " + newItem.getName() + " TYPE: " + newItem.getItemType());// + " PARENT: " + item.getParent());
-        pmcTest.removeItem(newItem);
-        System.out.println("ITEM: " + newItem.getName() + " TYPE: " + newItem.getItemType());// + " PARENT: " + item.getParent());
+        //pmcTest.removeItem(newItem);
+        //System.out.println("ITEM: " + newItem.getName() + " TYPE: " + newItem.getItemType());// + " PARENT: " + item.getParent());
+        System.out.println(pmcTest.toJson(false, null));
     }
 
     public static void Transform()

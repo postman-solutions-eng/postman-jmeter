@@ -148,29 +148,53 @@ public class PostmanItem implements IPostmanCollectionElement  {
         return null;
     }
     */
-    public void addItem(PostmanItem newItem, int position) throws Exception {
-        if(newItem.getClass().getName().equals("PostmanCollection"))
+    public void addItem(PostmanItem newItem) throws Exception {
+        if(item == null)
         {
-            throw new Exception("Can't add a collection to a collection");
+            item = new PostmanItem[0];
         }
-        if(position > (item.length + 1)) {
+        this.addItem(newItem, item.length);
+    }
+
+    public void addItem(PostmanItem newItem, int position) throws Exception {
+        if(item == null)
+        {
+            item = new PostmanItem[0];
+        }
+        if(newItem.getClass().getName().equals("com.postman.collection.PostmanCollection"))
+        {
+            String clname = this.getClass().getName();
+            System.out.println("CLASS " + clname);
+            PostmanItem[] newItems = newItem.getItems();
+            PostmanItem newFolder = new PostmanItem(newItem.getName());
+            newFolder.setDescription(newItem.getDescription() + " IMPORTED Collection");
+            this.addItem(newFolder, position);
+            for(int i = 0; i < newItems.length; i++)
+            {
+                newFolder.addItem(newItems[i]);
+            }
+            return;
+            //throw new Exception("Can't add a collection to a collection");
+        }
+        if((position > (item.length) || position < 0)) {
             throw new Exception("Position " + position + " out of bounds.");
         }
         PostmanItem[] newArr = new PostmanItem[item.length + 1];
-        int newArrIndex = 0;
         for(int i = 0; i < item.length; i++)
         {
             if(i == position)
             {
-                newArr[newArrIndex] = newItem;
-                newArrIndex++;
+                newArr[i] = newItem;
+                newArr[i+1] = item[i];
             }
-            else
+            else if (i < position)
             {
-                newArr[newArrIndex] = item[i];
+                newArr[i] = item[i];
             }
-        
-            newArrIndex++;
+            else if (i > position)
+            {
+                newArr[i+1] = item[i];
+            }
         }
         if(position == item.length) {
             newArr[position] = newItem;

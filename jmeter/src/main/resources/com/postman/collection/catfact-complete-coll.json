@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "80c3ed9b-9c68-4c22-87ac-14351029fd7f",
+		"_postman_id": "5461775b-c82d-4328-a219-3172891ed0d9",
 		"name": "Cat Fact TEST",
 		"description": "Contact Support:\n Email: contact@catfact.ninja",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24663264"
+		"_exporter_id": "23889826"
 	},
 	"item": [
 		{
@@ -196,34 +196,6 @@
 					]
 				},
 				{
-					"name": "Add Breed",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n            \"breed\": \"Epoxy\",\n            \"country\": \"HomeDepot\",\n            \"origin\": \"Artificial\",\n            \"coat\": \"Sticky\",\n            \"pattern\": \"Random\"\n        },",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://catfact.ninja/breeds",
-							"protocol": "https",
-							"host": [
-								"catfact",
-								"ninja"
-							],
-							"path": [
-								"breeds"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Get a Specific Fact",
 					"request": {
 						"method": "GET",
@@ -343,6 +315,34 @@
 							"body": "[\n  {\n    \"breed\": \"Excepteur d\",\n    \"country\": \"ad consequ\",\n    \"origin\": \"deserunt dolore\",\n    \"coat\": \"consectetur officia dolore ut irure\",\n    \"pattern\": \"nulla ea tempor magna\"\n  },\n  {\n    \"breed\": \"ex nisi\",\n    \"country\": \"dolor dolore c\",\n    \"origin\": \"aute incididunt dolor Ut\",\n    \"coat\": \"nulla ut sit eu Duis\",\n    \"pattern\": \"cupidat\"\n  }\n]"
 						}
 					]
+				},
+				{
+					"name": "Add Breed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"breed\": \"Epoxy\",\n            \"country\": \"HomeDepot\",\n            \"origin\": \"Artificial\",\n            \"coat\": \"Sticky\",\n            \"pattern\": \"Random\"\n        },",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://catfact.ninja/breeds",
+							"protocol": "https",
+							"host": [
+								"catfact",
+								"ninja"
+							],
+							"path": [
+								"breeds"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "Breeds"

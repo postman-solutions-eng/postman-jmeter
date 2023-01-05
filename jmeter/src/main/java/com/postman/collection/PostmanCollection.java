@@ -49,6 +49,14 @@ public PostmanAuth getAuth() {
     return auth;
 }
 
+public String getName() {
+    return this.getInfo().getName() + "";
+}
+
+public String getDescription() {
+    return this.getInfo().getDescription() + "";
+}
+
 public static PostmanCollection PMCFactory(String pathToJson) throws FileNotFoundException, IOException {
     PostmanCollection pmcRetVal = null;
     String strChunk = "";
