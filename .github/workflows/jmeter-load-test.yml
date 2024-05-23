@@ -22,22 +22,14 @@ jobs:
           pwd
       - name: Print env
         env:
-          MESSAGE: ${{ github.event.client_payload.envFile }}
+          MESSAGE: ./examples/catfact-coll.json
         run: | 
           echo $MESSAGE
 
       - name: Convert postman collection with environment
-        if: github.event.client_payload.envFile != ''
         run: | 
           mkdir ./assets/${{ github.run_id}}
-          node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j ./assets/${{ github.run_id }}/${{ github.run_id }}.jmx -o -v=${{ github.event.client_payload.variableStrategy }} -e ${{ github.event.client_payload.envFile }}
-      - name: Convert postman collection without environment
-        if: github.event.client_payload.envFile == ''
-        run: | 
-          echo $MESSAGE
-          mkdir ./assets/${{ github.run_id}}
-          node ./bin/convert-postman-jmeter -p ${{ github.event.client_payload.collectionPath }} -j ./assets/${{ github.run_id }}/${{ github.run_id }}.jmx -o -v=${{ github.event.client_payload.variableStrategy }} 
-
+          node ./bin/convert-postman-jmeter -p ./examples/catfact-coll.json -j ./assets/${{ github.run_id }}/${{ github.run_id }}.jmx -o -v=$resolve -e ./examples/catfact-env.json
       - name: Run Stress Tests
         run: |
           cd ./apache-jmeter-5.6.3/bin 
@@ -66,5 +58,5 @@ jobs:
           echo "https://github.com/${{github.repository}}/blob/main/assets/images/screenshot_${{ env.GITHUB_RUN_ID }}.png?raw=true"
       - name: Send results to postman
         run: | 
-          echo "Path: ${{ github.client_payload.collectionPath }} " 
-          node ./bin/respond -w  ${{ github.event.client_payload.workspaceID }} -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/${{ github.run_id }}/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_RUN_ID -c ${{ github.event.client_payload.collectionPath }} -b $GITHUB_WORKFLOW
+          echo "Path: ${{ ./examples/catfact-coll.json }} " 
+          node ./bin/respond -w  774fda03-bf0a-4c99-b915-b7ecf1856162 -u https://github.com/postman-solutions-eng/postman-jmeter/blob/main/assets/${{ github.run_id }}/screenshot_${{ github.run_id }}.png -r $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID -k ${{ secrets.POSTMAN_API_KEY }} -n $GITHUB_RUN_ID -c ./examples/catfact-coll.json -b $GITHUB_WORKFLOW
