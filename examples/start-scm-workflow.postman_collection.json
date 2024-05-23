@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "257204fc-ed2f-4608-9720-537bf3607e25",
+		"_postman_id": "a5f5090d-9583-4403-b229-d7d431d34241",
 		"name": "Start SCM Workflow",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23889826-257204fc-ed2f-4608-9720-537bf3607e25"
+		"_uid": "23889826-a5f5090d-9583-4403-b229-d7d431d34241"
 	},
 	"item": [
 		{
 			"name": "List artifacts",
-			"id": "6301fb2f-ace9-44d7-92bb-0eb67adf465b",
+			"id": "5b370f12-452b-4b9e-9a5e-8b81f539a195",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -36,7 +36,7 @@
 		},
 		{
 			"name": "Start SCM Workflow",
-			"id": "5f8620fa-1296-409e-a231-7780529da761",
+			"id": "ad627d8e-5fb7-49d7-bc73-057ff5e77dc2",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -86,7 +86,7 @@
 				"exec": [
 					""
 				],
-				"id": "93784fe9-9b07-4338-a59c-c2b8a2be6d8a"
+				"id": "6fdeebbd-8539-416b-be0d-207709313c27"
 			}
 		},
 		{
@@ -96,7 +96,7 @@
 				"exec": [
 					""
 				],
-				"id": "ade8fb22-a92a-438c-b1a1-ce622d373a63"
+				"id": "8b204872-6aad-46b2-82bc-9b3d8dff5bf5"
 			}
 		}
 	]

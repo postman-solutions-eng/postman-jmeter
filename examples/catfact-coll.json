@@ -1,15 +1,15 @@
 {
 	"info": {
-		"_postman_id": "3501d9d5-c4d8-4767-b058-cb44ed5724ba",
+		"_postman_id": "7259bb3c-3d9d-43e8-84aa-140fba55f6e2",
 		"name": "Cat Fact API",
 		"description": "Contact Support:\n Email: contact@catfact.ninja",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23889826-3501d9d5-c4d8-4767-b058-cb44ed5724ba"
+		"_uid": "23889826-7259bb3c-3d9d-43e8-84aa-140fba55f6e2"
 	},
 	"item": [
 		{
 			"name": "get Breeds",
-			"id": "c424841b-fa4b-4f3c-98eb-c2a6a1ec155b",
+			"id": "10df9013-77c1-4ed0-9097-adbe1c050763",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -38,7 +38,7 @@
 			},
 			"response": [
 				{
-					"id": "341e7bc1-ab57-4d83-a383-b846c8694399",
+					"id": "b666dd8c-3295-4275-8cc5-7678e25e0d93",
 					"name": "Normal operation",
 					"originalRequest": {
 						"method": "GET",
@@ -76,7 +76,7 @@
 		},
 		{
 			"name": "get Random Fact",
-			"id": "80c877b6-aefd-410a-a6f3-f09124422dfa",
+			"id": "1b628004-13d7-4da1-b272-cb5bf269b197",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -105,7 +105,7 @@
 			},
 			"response": [
 				{
-					"id": "1d02f91b-9dee-4d78-8f30-12a76e45a972",
+					"id": "c1c54137-fbc2-4f74-8984-ab372f754c0f",
 					"name": "Normal response",
 					"originalRequest": {
 						"method": "GET",
@@ -143,7 +143,7 @@
 		},
 		{
 			"name": "Get a list of facts",
-			"id": "4a0e124e-7120-44ec-bc20-1ee21a9c1bd5",
+			"id": "177b3c60-3616-490d-a029-5cab36fa4f6e",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -176,7 +176,7 @@
 			},
 			"response": [
 				{
-					"id": "c15117b8-1990-47d7-9bf9-704222f7a041",
+					"id": "ade2d75c-7910-409c-a17c-5d42c1bc0fac",
 					"name": "successful operation",
 					"originalRequest": {
 						"method": "GET",
@@ -218,7 +218,7 @@
 		},
 		{
 			"name": "Add Breed",
-			"id": "9daf5e22-f375-41b8-9bf5-51b9bce55f32",
+			"id": "55edca82-3e68-4776-85fd-65e8c22efdae",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -243,7 +243,7 @@
 			},
 			"response": [
 				{
-					"id": "6a294af7-7aac-4a95-bc14-f617e97f5f1b",
+					"id": "794980e6-86ba-4afe-9df9-aeb5ba159d65",
 					"name": "Add Breed",
 					"originalRequest": {
 						"method": "POST",
@@ -279,7 +279,7 @@
 		},
 		{
 			"name": "Add Fact",
-			"id": "10b23d5e-893c-4a05-ac7b-9847db51eb72",
+			"id": "6e48aabf-53ac-4af6-b3d8-7f887fe8b01d",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -304,7 +304,7 @@
 			},
 			"response": [
 				{
-					"id": "424e3cd8-5557-4677-aafe-fd72a6ee8aca",
+					"id": "1b4dfd58-d066-4ed7-9358-0ff7d841a9f8",
 					"name": "Add Fact",
 					"originalRequest": {
 						"method": "POST",
@@ -338,7 +338,7 @@
 		},
 		{
 			"name": "Fact - Constructed URL",
-			"id": "a2cf146f-5d70-448a-976b-fc7426b0eb5a",
+			"id": "8c1fd784-a943-4be6-a311-6f17f68fafa6",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -362,7 +362,7 @@
 			},
 			"response": [
 				{
-					"id": "9104ca46-87b9-4aa8-88f8-06b3e429d390",
+					"id": "22887fce-cff3-4c90-8cb5-3e632cc058ef",
 					"name": "Normal response",
 					"originalRequest": {
 						"method": "GET",
@@ -407,7 +407,7 @@
 				"exec": [
 					""
 				],
-				"id": "f6e1f030-dbc7-4503-ae41-fadb553185fa"
+				"id": "ed445193-6d91-4ad8-8b50-40a754e92555"
 			}
 		},
 		{
@@ -417,7 +417,7 @@
 				"exec": [
 					""
 				],
-				"id": "40e92f98-1140-4a1d-88e3-03ccd86f2da8"
+				"id": "ddb7758b-70db-4623-a74b-a3dfb47d4ce4"
 			}
 		}
 	],
