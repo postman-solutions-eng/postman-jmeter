@@ -1,14 +1,15 @@
 {
 	"info": {
-		"_postman_id": "b69694f6-bba5-4d3c-b71c-069ce0191dd5",
+		"_postman_id": "3501d9d5-c4d8-4767-b058-cb44ed5724ba",
 		"name": "Cat Fact API",
 		"description": "Contact Support:\n Email: contact@catfact.ninja",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23889826"
+		"_uid": "23889826-3501d9d5-c4d8-4767-b058-cb44ed5724ba"
 	},
 	"item": [
 		{
 			"name": "get Breeds",
+			"id": "c424841b-fa4b-4f3c-98eb-c2a6a1ec155b",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -37,6 +38,7 @@
 			},
 			"response": [
 				{
+					"id": "341e7bc1-ab57-4d83-a383-b846c8694399",
 					"name": "Normal operation",
 					"originalRequest": {
 						"method": "GET",
@@ -60,6 +62,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -73,6 +76,7 @@
 		},
 		{
 			"name": "get Random Fact",
+			"id": "80c877b6-aefd-410a-a6f3-f09124422dfa",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -101,6 +105,7 @@
 			},
 			"response": [
 				{
+					"id": "1d02f91b-9dee-4d78-8f30-12a76e45a972",
 					"name": "Normal response",
 					"originalRequest": {
 						"method": "GET",
@@ -124,6 +129,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -137,6 +143,7 @@
 		},
 		{
 			"name": "Get a list of facts",
+			"id": "4a0e124e-7120-44ec-bc20-1ee21a9c1bd5",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -169,6 +176,7 @@
 			},
 			"response": [
 				{
+					"id": "c15117b8-1990-47d7-9bf9-704222f7a041",
 					"name": "successful operation",
 					"originalRequest": {
 						"method": "GET",
@@ -196,6 +204,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -209,6 +218,7 @@
 		},
 		{
 			"name": "Add Breed",
+			"id": "9daf5e22-f375-41b8-9bf5-51b9bce55f32",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -233,6 +243,7 @@
 			},
 			"response": [
 				{
+					"id": "6a294af7-7aac-4a95-bc14-f617e97f5f1b",
 					"name": "Add Breed",
 					"originalRequest": {
 						"method": "POST",
@@ -259,6 +270,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "Text",
+					"_postman_previewtype": "html",
 					"header": [],
 					"cookie": [],
 					"body": "{\n    \"status\":\"Success\"\n}"
@@ -267,6 +279,7 @@
 		},
 		{
 			"name": "Add Fact",
+			"id": "10b23d5e-893c-4a05-ac7b-9847db51eb72",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -291,6 +304,7 @@
 			},
 			"response": [
 				{
+					"id": "424e3cd8-5557-4677-aafe-fd72a6ee8aca",
 					"name": "Add Fact",
 					"originalRequest": {
 						"method": "POST",
@@ -314,7 +328,8 @@
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
+					"_postman_previewtype": "html",
 					"header": null,
 					"cookie": [],
 					"body": "{\n    \"status\":\"Breed added successfully\"\n}"
@@ -323,6 +338,7 @@
 		},
 		{
 			"name": "Fact - Constructed URL",
+			"id": "a2cf146f-5d70-448a-976b-fc7426b0eb5a",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -346,6 +362,7 @@
 			},
 			"response": [
 				{
+					"id": "9104ca46-87b9-4aa8-88f8-06b3e429d390",
 					"name": "Normal response",
 					"originalRequest": {
 						"method": "GET",
@@ -369,6 +386,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -388,7 +406,8 @@
 				"type": "text/javascript",
 				"exec": [
 					""
-				]
+				],
+				"id": "f6e1f030-dbc7-4503-ae41-fadb553185fa"
 			}
 		},
 		{
@@ -397,32 +416,38 @@
 				"type": "text/javascript",
 				"exec": [
 					""
-				]
+				],
+				"id": "40e92f98-1140-4a1d-88e3-03ccd86f2da8"
 			}
 		}
 	],
 	"variable": [
 		{
+			"id": "0764127d-c43d-4146-a0fd-7f0d351e60be",
 			"key": "baseUrl",
 			"value": "https://a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn.io",
 			"type": "string"
 		},
 		{
+			"id": "00288869-1ac1-4ef0-a015-603fe8e71455",
 			"key": "breedName",
 			"value": "Nubian",
 			"type": "string"
 		},
 		{
+			"id": "aa791879-4211-40a7-822d-28254b66a84e",
 			"key": "protocol",
 			"value": "https",
 			"type": "string"
 		},
 		{
+			"id": "d3276608-2b0f-4628-956d-0e086ef37b25",
 			"key": "server",
 			"value": "a5b626e6-e572-4486-836f-a705db8e560a.mock.pstmn",
 			"type": "string"
 		},
 		{
+			"id": "35ed9748-70fc-4d8e-bf6f-332047e4e567",
 			"key": "tld",
 			"value": "io",
 			"type": "string"

@@ -1,13 +1,14 @@
 {
 	"info": {
-		"_postman_id": "2df2bcf3-57ea-460e-ade4-ac0a2e6f4b00",
+		"_postman_id": "257204fc-ed2f-4608-9720-537bf3607e25",
 		"name": "Start SCM Workflow",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23889826"
+		"_uid": "23889826-257204fc-ed2f-4608-9720-537bf3607e25"
 	},
 	"item": [
 		{
 			"name": "List artifacts",
+			"id": "6301fb2f-ace9-44d7-92bb-0eb67adf465b",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -35,6 +36,7 @@
 		},
 		{
 			"name": "Start SCM Workflow",
+			"id": "5f8620fa-1296-409e-a231-7780529da761",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -83,7 +85,8 @@
 				"type": "text/javascript",
 				"exec": [
 					""
-				]
+				],
+				"id": "93784fe9-9b07-4338-a59c-c2b8a2be6d8a"
 			}
 		},
 		{
@@ -92,7 +95,8 @@
 				"type": "text/javascript",
 				"exec": [
 					""
-				]
+				],
+				"id": "ade8fb22-a92a-438c-b1a1-ce622d373a63"
 			}
 		}
 	]
